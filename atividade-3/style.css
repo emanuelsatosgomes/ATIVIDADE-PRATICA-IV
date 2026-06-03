@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e5e5e5;
+}
+
+.pagina {
+    display: grid;
+    grid-template-areas:
+        "cabecalho cabecalho"
+        "lateral principal";
+    grid-template-columns: 220px 1fr;
+    min-height: 100vh;
+}
+
+.cabecalho {
+    grid-area: cabecalho;
+    background-color: #111111;
+    color: white;
+    padding: 15px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.botao-login {
+    background-color: #333333;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+}
+
+.barra-lateral {
+    grid-area: lateral;
+    background-color: #1f1f1f;
+    color: white;
+    padding: 20px;
+}
+
+.barra-lateral h3 {
+    margin-bottom: 15px;
+}
+
+.barra-lateral ul {
+    list-style: none;
+}
+
+.barra-lateral li {
+    margin-bottom: 12px;
+}
+
+.area-principal {
+    grid-area: principal;
+    padding: 20px;
+}
+
+.grade-cursos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.box-curso {
+    background-color: white;
+    border: 1px solid #bdbdbd;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.mini-banner {
+    background-color: #d9d9d9;
+    height: 80px;
+    margin-bottom: 10px;
+}
+
+.box-curso h3 {
+    margin-bottom: 8px;
+    color: #111111;
+}
+
+.box-curso p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #444444;
+}
+
+.box-curso button {
+    background-color: #111111;
+    color: white;
+    border: none;
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+
+    .grade-cursos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .menu {
+        gap: 10px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+
+    .area-principal {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .pagina {
+        grid-template-areas:
+            "cabecalho"
+            "lateral"
+            "principal";
+        grid-template-columns: 1fr;
+    }
+
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .grade-cursos {
+        grid-template-columns: 1fr;
+    }
+
+    .box-curso button,
+    .botao-login {
+        width: 100%;
+    }
+
+    .barra-lateral {
+        text-align: center;
+    }
+}
